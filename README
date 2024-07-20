@@ -1,0 +1,26 @@
+Machine Learning Application with AWS Cloud Services
+
+This project implements a machine learning application utilizing AWS cloud services. It includes scripts for downloading images, preprocessing them, generating predictions using a pre-trained model, and serving the predictions via a Flask server. The project focuses on scalability, utilizing Redis for messaging and concurrency.
+
+Scripts
+1. image_downloader.py
+Description: Downloads images from URLs provided in messages received via Redis.
+Dependencies: requests, base64, redis
+To run: Simply execute the script. Make sure Redis is running.
+2. predict.py
+Description: Preprocesses images and generates predictions using a pre-trained Inception V3 model from PyTorch.
+Dependencies: torch, torchvision, PIL, base64, redis
+To run: Execute the script. Ensure Redis is running.
+3. main.py
+Description: Provides a user interface for inputting image URLs and displays predictions received via Redis.
+Dependencies: threading, time, json, redis
+To run: Execute the script. Ensure Redis is running.
+4. server.py
+Description: Flask server for receiving HTTP requests to process images and returning predictions.
+Dependencies: Flask, json, redis, uuid, datetime, base64
+To run: Execute the script. Ensure Redis is running.
+Instructions
+Clone the repository.
+Install the dependencies using pip: pip install -r requirements.txt.
+Ensure Redis is installed and running.
+Run each script individually according to the provided instructions.
